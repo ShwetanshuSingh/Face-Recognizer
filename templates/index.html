@@ -1,0 +1,25 @@
+<!doctype html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Is this a picture of Modi/Kejri?</title>
+<h1>Upload a picture and see if it's a picture of Modi/Kejri!</h1>
+<form method="POST" enctype="multipart/form-data">
+  <input type="file" name="file" />
+  <input type="submit" value="Upload">
+  <img src="./static/Predicted Image.jpeg" />
+</form>
+
+{% if data %}
+<ul>
+    <li>Face Found: {{data.face_found_in_image}}</li>
+    <li>Narendra Modi: {{data.is_picture_of_modi}}</li>
+    <li>Arvind Kejriwal: {{data.is_picture_of_kejri}}</li>    
+  </ul>
+ {% endif %}
+
+<style type="text/css">
+	img{
+  max-width:180px;
+	}
+</style>
